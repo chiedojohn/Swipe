@@ -33,6 +33,7 @@ function Swipe(container, options) {
   var index = parseInt(options.startSlide, 10) || 0;
   var speed = options.speed || 300;
   options.continuous = options.continuous !== undefined ? options.continuous : true;
+  options.disableTouch = options.disableTouch !== undefined ? options.disableTouch : false;
 
   function setup() {
 
@@ -256,7 +257,7 @@ function Swipe(container, options) {
 
     },
     start: function(event) {
-
+      if (options.disableTouch) return;
       var touches = event.touches[0];
 
       // measure start values

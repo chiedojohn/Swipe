@@ -57,6 +57,7 @@ Swipe can take an optional second parameter– an object of key/value settings:
 -	**callback** Function - runs at slide change.
 
 - **transitionEnd** Function - runs at the end slide transition.
+- **disableTouch** Boolean *(default: false)* - prevent any touch events.
 
 ### Example
 
@@ -69,6 +70,7 @@ window.mySwipe = new Swipe(document.getElementById('slider'), {
   continuous: true,
   disableScroll: false,
   stopPropagation: false,
+  disableTouch: false,
   callback: function(index, elem) {},
   transitionEnd: function(index, elem) {}
 });
